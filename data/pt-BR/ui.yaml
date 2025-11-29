@@ -1,0 +1,28 @@
+meta:
+  title: "João Vitor de Jesus Oliveira - Desenvolvedor de Software"
+  description: "Desenvolvedor de Software Jr. com experiência em PHP, Laravel, Django, Python, Docker e APIs REST. Portfólio e currículo profissional."
+
+sections:
+  summary: "Resumo Profissional"
+  skills: "Competências Técnicas"
+  experience: "Experiência Profissional"
+  education: "Formação Acadêmica"
+  certifications: "Certificações"
+  languages: "Idiomas"
+
+actions:
+  downloadPdf: "Baixar PDF"
+  switchLang: "English"
+  lightMode: "Modo claro"
+  darkMode: "Modo escuro"
+  viewMore: "Ver mais"
+  viewLess: "Ver menos"
+
+labels:
+  present: "Presente"
+  previousExperience: "Experiências Anteriores"
+  skillsAcquired: "Competências Adquiridas"
+  projects: "Projetos"
+  stack: "Tecnologias"
+  highlights: "Destaques"
+  allRightsReserved: "Todos os direitos reservados"

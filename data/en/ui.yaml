@@ -1,0 +1,28 @@
+meta:
+  title: "João Vitor de Jesus Oliveira - Software Developer"
+  description: "Junior Software Developer with experience in PHP, Laravel, Django, Python, Docker, and REST APIs. Professional portfolio and resume."
+
+sections:
+  summary: "Professional Summary"
+  skills: "Technical Skills"
+  experience: "Professional Experience"
+  education: "Education"
+  certifications: "Certifications"
+  languages: "Languages"
+
+actions:
+  downloadPdf: "Download PDF"
+  switchLang: "Português"
+  lightMode: "Light mode"
+  darkMode: "Dark mode"
+  viewMore: "View more"
+  viewLess: "View less"
+
+labels:
+  present: "Present"
+  previousExperience: "Previous Experience"
+  skillsAcquired: "Skills Acquired"
+  projects: "Projects"
+  stack: "Technologies"
+  highlights: "Highlights"
+  allRightsReserved: "All rights reserved"

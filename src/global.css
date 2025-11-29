@@ -1,0 +1,273 @@
+@import "tailwindcss";
+
+/* shadcn/ui Theme Variables */
+:root {
+	--radius: 0.625rem;
+	--background: oklch(1 0 0);
+	--foreground: oklch(0.145 0 0);
+	--card: oklch(1 0 0);
+	--card-foreground: oklch(0.145 0 0);
+	--popover: oklch(1 0 0);
+	--popover-foreground: oklch(0.145 0 0);
+	--primary: oklch(0.205 0 0);
+	--primary-foreground: oklch(0.985 0 0);
+	--secondary: oklch(0.97 0 0);
+	--secondary-foreground: oklch(0.205 0 0);
+	--muted: oklch(0.97 0 0);
+	--muted-foreground: oklch(0.556 0 0);
+	--accent: oklch(0.97 0 0);
+	--accent-foreground: oklch(0.205 0 0);
+	--destructive: oklch(0.577 0.245 27.325);
+	--border: oklch(0.922 0 0);
+	--input: oklch(0.922 0 0);
+	--ring: oklch(0.708 0 0);
+}
+
+.dark {
+	--background: oklch(0.145 0 0);
+	--foreground: oklch(0.985 0 0);
+	--card: oklch(0.205 0 0);
+	--card-foreground: oklch(0.985 0 0);
+	--popover: oklch(0.269 0 0);
+	--popover-foreground: oklch(0.985 0 0);
+	--primary: oklch(0.922 0 0);
+	--primary-foreground: oklch(0.205 0 0);
+	--secondary: oklch(0.269 0 0);
+	--secondary-foreground: oklch(0.985 0 0);
+	--muted: oklch(0.269 0 0);
+	--muted-foreground: oklch(0.708 0 0);
+	--accent: oklch(0.371 0 0);
+	--accent-foreground: oklch(0.985 0 0);
+	--destructive: oklch(0.704 0.191 22.216);
+	--border: oklch(1 0 0 / 10%);
+	--input: oklch(1 0 0 / 15%);
+	--ring: oklch(0.556 0 0);
+}
+
+/* Tailwind CSS theme configuration */
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Alpine.js cloak - hide elements until Alpine initializes */
+[x-cloak] {
+	display: none;
+}
+
+/* Base styles */
+body {
+	background-color: var(--background);
+	color: var(--foreground);
+}
+
+/* Print Styles for ATS-friendly PDF - Max 2 pages */
+@media print {
+	/* Page setup */
+	@page {
+		size: A4;
+		margin: 10mm 12mm 10mm 12mm;
+	}
+
+	/* Reset colors for print */
+	:root {
+		--background: #ffffff;
+		--foreground: #000000;
+		--card: #ffffff;
+		--card-foreground: #000000;
+		--muted-foreground: #4a5568;
+		--border: #e2e8f0;
+		--secondary: #f1f5f9;
+		--secondary-foreground: #1e293b;
+	}
+
+	/* Force light mode on print */
+	.dark {
+		--background: #ffffff;
+		--foreground: #000000;
+		--card: #ffffff;
+		--card-foreground: #000000;
+		--muted-foreground: #4a5568;
+		--border: #e2e8f0;
+		--secondary: #f1f5f9;
+		--secondary-foreground: #1e293b;
+	}
+
+	/* Compact typography for 2 pages */
+	body {
+		font-size: 8.5pt;
+		line-height: 1.3;
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+
+	h1 {
+		font-size: 12pt;
+	}
+
+	h2 {
+		font-size: 10pt;
+		margin-bottom: 4pt;
+	}
+
+	h3 {
+		font-size: 9pt;
+	}
+
+	h4 {
+		font-size: 8.5pt;
+	}
+
+	/* Compact spacing */
+	section {
+		margin-bottom: 8pt;
+	}
+
+	.mb-10 {
+		margin-bottom: 8pt;
+	}
+
+	.mb-6 {
+		margin-bottom: 6pt;
+	}
+
+	.mb-4 {
+		margin-bottom: 4pt;
+	}
+
+	.mb-3 {
+		margin-bottom: 3pt;
+	}
+
+	.gap-4 {
+		gap: 6pt;
+	}
+
+	.gap-2 {
+		gap: 3pt;
+	}
+
+	.p-4 {
+		padding: 6pt;
+	}
+
+	.p-5 {
+		padding: 6pt;
+	}
+
+	.space-y-6 > * + * {
+		margin-top: 8pt;
+	}
+
+	.space-y-3 > * + * {
+		margin-top: 4pt;
+	}
+
+	/* Remove shadows and unnecessary decorations */
+	* {
+		box-shadow: none;
+		text-shadow: none;
+	}
+
+	/* Ensure links are visible */
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	/* Avoid page breaks inside elements */
+	article,
+	.rounded-lg {
+		break-inside: avoid;
+	}
+
+	/* Allow section breaks but keep headings with content */
+	section {
+		break-inside: auto;
+	}
+
+	/* Avoid orphans and widows */
+	p,
+	li {
+		orphans: 2;
+		widows: 2;
+	}
+
+	/* Keep headings with content */
+	h1,
+	h2,
+	h3,
+	h4 {
+		break-after: avoid;
+		page-break-after: avoid;
+	}
+
+	/* Remove transitions and animations */
+	* {
+		transition: none;
+		animation: none;
+	}
+
+	/* Ensure all content is visible (no cloak) */
+	[x-cloak] {
+		display: block;
+	}
+
+	/* Show collapsed content in print */
+	[x-show="open"],
+	[x-show="expanded"],
+	[x-collapse] {
+		display: block;
+		height: auto;
+		overflow: visible;
+		opacity: 1;
+	}
+
+	/* Compact skills grid */
+	.grid-cols-3 {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	/* Compact badges */
+	.px-2 {
+		padding-left: 4pt;
+		padding-right: 4pt;
+	}
+
+	.py-0\.5,
+	.py-1 {
+		padding-top: 1pt;
+		padding-bottom: 1pt;
+	}
+
+	/* Hide previous experience details in print to save space */
+	.print\:hidden {
+		display: none;
+	}
+
+	/* Footer compact */
+	footer {
+		padding-top: 6pt;
+		margin-top: 6pt;
+	}
+}

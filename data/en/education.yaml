@@ -1,0 +1,40 @@
+degrees:
+  - course: "Systems Analysis and Development"
+    institution: "Faculdade Descomplica"
+    period: "2023 - 2025"
+    periodStart: "2023"
+    periodEnd: "2025"
+    type: "higher"
+    status: "Completed"
+
+  - course: "Postgraduate in Software Engineering"
+    institution: "To be defined"
+    period: "2025 - Planned"
+    periodStart: "2025"
+    type: "postgraduate"
+    status: "Planned"
+
+  - course: "Technical Degree in Systems Development"
+    institution: "ETEC Fernando Prestes"
+    period: "2021 - 2022"
+    periodStart: "2021"
+    periodEnd: "2022"
+    type: "technical"
+    status: "Completed"
+
+certifications:
+  - "Digital Governance 4.0"
+  - "Smart Data Structures"
+  - "Mobile Developer"
+  - "Microservices and Containers"
+  - "Object-Oriented Developer"
+  - "LGPD (Brazilian Data Protection Law)"
+
+languages:
+  - name: "Portuguese"
+    level: "Native"
+    code: "pt"
+
+  - name: "English"
+    level: "Intermediate B1"
+    code: "en"

@@ -1,0 +1,40 @@
+degrees:
+  - course: "Análise e Desenvolvimento de Sistemas"
+    institution: "Faculdade Descomplica"
+    period: "2023 - 2025"
+    periodStart: "2023"
+    periodEnd: "2025"
+    type: "higher"
+    status: "Concluído"
+
+  - course: "Pós-Graduação em Engenharia de Software"
+    institution: "A definir"
+    period: "2025 - Planejado"
+    periodStart: "2025"
+    type: "postgraduate"
+    status: "Planejado"
+
+  - course: "Técnico em Desenvolvimento de Sistemas"
+    institution: "ETEC Fernando Prestes"
+    period: "2021 - 2022"
+    periodStart: "2021"
+    periodEnd: "2022"
+    type: "technical"
+    status: "Concluído"
+
+certifications:
+  - "Governança Digital 4.0"
+  - "Smart Data Structures"
+  - "Mobile Developer"
+  - "Microsserviços e Containers"
+  - "Object-Oriented Developer"
+  - "LGPD"
+
+languages:
+  - name: "Português"
+    level: "Nativo"
+    code: "pt"
+
+  - name: "Inglês"
+    level: "Intermediário B1"
+    code: "en"
