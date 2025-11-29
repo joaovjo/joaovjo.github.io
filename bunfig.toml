@@ -20,8 +20,6 @@ sourcemap = "external"
 
 # Custom file loaders
 [bundle.loader]
-".yaml" = "file"
-".yml" = "file"
 
 # Development-specific settings
 [run]
