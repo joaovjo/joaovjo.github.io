@@ -26,37 +26,8 @@
 
     <link rel="stylesheet" href="../../global.css" />
 
-    <!-- JSON-LD Schema.org -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ProfilePage",
-        "mainEntity": {
-            "@type": "Person",
-            "name": "João Vitor de Jesus Oliveira",
-            "jobTitle": "Junior Software Developer",
-            "email": "contato@joaovjo.com.br",
-            "telephone": "+55 15 981452911",
-            "url": "https://joaovjo.com.br",
-            "sameAs": [
-                "https://www.linkedin.com/in/joaovitordejesusoliveira",
-                "https://github.com/joaovjo"
-            ],
-            "knowsAbout": [
-                "PHP", "Laravel", "Django", "Python", "Docker", "REST API",
-                "MySQL", "PostgreSQL", "Git", "Linux", "React", "JavaScript",
-                "TypeScript", "Tailwind CSS", "Microservices"
-            ],
-            "hasCredential": [
-                {
-                    "@type": "EducationalOccupationalCredential",
-                    "name": "Systems Analysis and Development",
-                    "credentialCategory": "degree"
-                }
-            ]
-        }
-    }
-    </script>
+    <!-- JSON-LD Schema.org - Dynamically generated from profile data -->
+    <script type="application/ld+json" id="schema-org-data"></script>
 
     <!-- Force English language -->
     <!-- Language is now set via Alpine's x-init directive in <body> -->
@@ -119,12 +90,12 @@
                 </button>
             </div>
 
-            <!-- Print header with contact info -->
+            <!-- Print header with contact info - dynamically loaded from profile data -->
             <address class="hidden print:flex print:flex-col print:text-right print:text-xs print:not-italic" itemprop="address">
-                <a href="mailto:contato@joaovjo.com.br" itemprop="email">contato@joaovjo.com.br</a>
-                <a href="https://wa.me/5515981452911" itemprop="telephone">+55 15 98145-2911</a>
-                <a href="https://linkedin.com/in/joaovitordejesusoliveira" itemprop="sameAs">linkedin.com/in/joaovitordejesusoliveira</a>
-                <a href="https://github.com/joaovjo" itemprop="sameAs">github.com/joaovjo</a>
+                <a :href="'mailto:' + $t().profile.contact.email" itemprop="email" x-text="$t().profile.contact.email"></a>
+                <a :href="'https://wa.me/' + $t().profile.contact.phone.replace(/[\s+]/g, '')" itemprop="telephone" x-text="$t().profile.contact.phone"></a>
+                <a :href="$t().profile.contact.linkedin" itemprop="sameAs" x-text="$t().profile.contact.linkedin.replace('https://www.', '')"></a>
+                <a :href="$t().profile.contact.github" itemprop="sameAs" x-text="$t().profile.contact.github.replace('https://', '')"></a>
             </address>
         </header>
 
