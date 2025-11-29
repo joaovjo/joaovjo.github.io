@@ -123,11 +123,6 @@ document.addEventListener("alpine:initialized", () => {
 		}
 	});
 
-	// Watch for language changes
-	Alpine.effect(() => {
-		const lang = Alpine.store("lang") as Lang;
-		document.documentElement.lang = lang;
-	});
 });
 
 // Extend window for Alpine
