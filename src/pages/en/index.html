@@ -59,13 +59,10 @@
     </script>
 
     <!-- Force English language -->
-    <script>
-        // Set English as the language before Alpine loads
-        localStorage.setItem('lang', 'en');
-    </script>
+    <!-- Language is now set via Alpine's x-init directive in <body> -->
 </head>
 
-<body x-data x-cloak
+<body x-data x-cloak x-init="localStorage.setItem('lang', 'en')"
     :class="{ 'dark': $store.darkMode }"
     class="min-h-screen bg-background text-foreground transition-colors duration-300 print:bg-white print:text-black">
 
