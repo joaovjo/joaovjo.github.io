@@ -9,6 +9,7 @@
 
 import enIndexHtml from "./pages/en/index.html";
 // Import HTML files as modules (Bun bundles them automatically)
+import enIndexHtml from "./pages/en/index.html";
 import indexHtml from "./pages/index.html";
 
 /**
@@ -111,7 +112,7 @@ if (yamlLoadErrors.length > 0) {
 }
 
 const isDev = process.env.NODE_ENV !== "production";
-const port = Number(process.env.PORT) || 3000;
+const port = parseInt(process.env.PORT || '3000', 10) || 3000;
 
 console.log(
 	`🚀 Starting server in ${isDev ? "development" : "production"} mode...`,
@@ -198,8 +199,8 @@ const server = Bun.serve({
 });
 
 console.log(`✅ Server running at ${server.url}`);
-console.log(`📄 PT-BR: ${server.url}`);
-console.log(`📄 EN: ${server.url}en/`);
+console.log(`📄 PT-BR page: ${server.url}`);
+console.log(`📄 EN page: ${server.url}en/`);
 
 if (isDev) {
 	console.log(`🔥 Hot reload enabled - edit files and see changes instantly!`);
