@@ -15,7 +15,38 @@ import enIndexHtml from "./pages/en/index.html";
 import indexHtml from "./pages/index.html";
 
 const isDev = process.env.NODE_ENV !== "production";
-const port = parseInt(process.env.PORT || '3000', 10) || 3000;
+const port = parseInt(process.env.PORT || "3000", 10) || 3000;
+
+// MIME type mapping for common file extensions
+const mimeTypes: Record<string, string> = {
+	".html": "text/html; charset=utf-8",
+	".css": "text/css; charset=utf-8",
+	".js": "application/javascript; charset=utf-8",
+	".json": "application/json; charset=utf-8",
+	".png": "image/png",
+	".jpg": "image/jpeg",
+	".jpeg": "image/jpeg",
+	".gif": "image/gif",
+	".svg": "image/svg+xml",
+	".ico": "image/x-icon",
+	".webp": "image/webp",
+	".woff": "font/woff",
+	".woff2": "font/woff2",
+	".ttf": "font/ttf",
+	".eot": "application/vnd.ms-fontobject",
+	".otf": "font/otf",
+	".txt": "text/plain; charset=utf-8",
+	".xml": "application/xml; charset=utf-8",
+	".pdf": "application/pdf",
+	".zip": "application/zip",
+	".map": "application/json",
+};
+
+// Get MIME type based on file extension
+function getMimeType(pathname: string): string {
+	const ext = pathname.substring(pathname.lastIndexOf(".")).toLowerCase();
+	return mimeTypes[ext] || "application/octet-stream";
+}
 
 console.log(
 	`🚀 Starting server in ${isDev ? "development" : "production"} mode...`,
@@ -57,7 +88,10 @@ const server = Bun.serve({
 			const filePath = `.${pathname}`;
 			const file = Bun.file(filePath);
 			if (await file.exists()) {
-				return new Response(file);
+				const contentType = getMimeType(pathname);
+				return new Response(file, {
+					headers: { "Content-Type": contentType },
+				});
 			}
 		}
 
@@ -65,7 +99,9 @@ const server = Bun.serve({
 		if (pathname === "/CNAME") {
 			const file = Bun.file("./CNAME");
 			if (await file.exists()) {
-				return new Response(file);
+				return new Response(file, {
+					headers: { "Content-Type": "text/plain; charset=utf-8" },
+				});
 			}
 		}
 
