@@ -28,6 +28,56 @@ interface I18nStore {
 
 type Lang = "pt-BR" | "en";
 
+// Generate Schema.org JSON-LD data from profile data
+function generateSchemaOrgData(lang: Lang): object {
+	const profile = i18n[lang].profile;
+	const education = i18n[lang].education;
+
+	return {
+		"@context": "https://schema.org",
+		"@type": "ProfilePage",
+		mainEntity: {
+			"@type": "Person",
+			name: profile.name,
+			jobTitle: profile.title,
+			email: profile.contact.email,
+			telephone: profile.contact.phone,
+			url: "https://joaovjo.com.br",
+			sameAs: [profile.contact.linkedin, profile.contact.github],
+			knowsAbout: [
+				"PHP",
+				"Laravel",
+				"Django",
+				"Python",
+				"Docker",
+				"REST API",
+				"MySQL",
+				"PostgreSQL",
+				"Git",
+				"Linux",
+				"React",
+				"JavaScript",
+				"TypeScript",
+				"Tailwind CSS",
+				"Microservices",
+			],
+			hasCredential: education.degrees.map((degree: { course: string }) => ({
+				"@type": "EducationalOccupationalCredential",
+				name: degree.course,
+				credentialCategory: "degree",
+			})),
+		},
+	};
+}
+
+// Update Schema.org data in the DOM
+function updateSchemaOrgData(lang: Lang): void {
+	const schemaScript = document.getElementById("schema-org-data");
+	if (schemaScript) {
+		schemaScript.textContent = JSON.stringify(generateSchemaOrgData(lang));
+	}
+}
+
 // Build i18n data structure
 const i18n: I18nStore = {
 	"pt-BR": {
@@ -123,6 +173,12 @@ document.addEventListener("alpine:initialized", () => {
 		}
 	});
 
+	// Watch for language changes and update Schema.org data
+	Alpine.effect(() => {
+		const lang = Alpine.store("lang") as Lang;
+		document.documentElement.lang = lang;
+		updateSchemaOrgData(lang);
+	});
 });
 
 // Extend window for Alpine
