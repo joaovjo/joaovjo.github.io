@@ -1,13 +1,13 @@
 import Alpine from "alpinejs";
+// Import YAML data - English
 import educationEn from "@/data/en/education.yaml";
 import experienceEn from "@/data/en/experience.yaml";
-// Import YAML data - English
 import profileEn from "@/data/en/profile.yaml";
 import skillsEn from "@/data/en/skills.yaml";
 import uiEn from "@/data/en/ui.yaml";
+// Import YAML data - Portuguese
 import educationPtBR from "@/data/pt-BR/education.yaml";
 import experiencePtBR from "@/data/pt-BR/experience.yaml";
-// Import YAML data - Portuguese
 import profilePtBR from "@/data/pt-BR/profile.yaml";
 import skillsPtBR from "@/data/pt-BR/skills.yaml";
 import uiPtBR from "@/data/pt-BR/ui.yaml";
