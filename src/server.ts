@@ -78,8 +78,8 @@ const server = Bun.serve({
 });
 
 console.log(`✅ Server running at ${server.url}`);
-console.log(`📄 PT-BR: ${server.url}`);
-console.log(`📄 EN: ${server.url}en/`);
+console.log(`📄 PT-BR page: ${server.url}`);
+console.log(`📄 EN page: ${server.url}en/`);
 
 if (isDev) {
 	console.log(`🔥 Hot reload enabled - edit files and see changes instantly!`);
