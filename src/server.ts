@@ -39,7 +39,7 @@ const mimeTypes: Record<string, string> = {
 	".xml": "application/xml; charset=utf-8",
 	".pdf": "application/pdf",
 	".zip": "application/zip",
-	".map": "application/json",
+	".map": "application/json; charset=utf-8",
 };
 
 // Get MIME type based on file extension
