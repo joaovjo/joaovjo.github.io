@@ -1,0 +1,92 @@
+jobs:
+  - title: "IT Intern"
+    company: "Sorocaba City Hall"
+    period: "September 2024 - October 2025"
+    periodStart: "2024-09"
+    periodEnd: "2025-10"
+    type: "tech"
+    stack:
+      - "Python"
+      - "Django"
+      - "PostgreSQL"
+      - "PHP"
+      - "SuiteCRM"
+      - "WordPress"
+      - "Docker"
+      - "Portainer CE"
+    projects:
+      - role: "Backend Developer - Portal 156"
+        period: "Dec/2024 - Jun/2025"
+        description: "Responsible for integrating the citizen service system with government CRM for process automation."
+        highlights:
+          - "Development of Django + SuiteCRM API v4 REST integration layer implementing authentication, custom endpoints, and robust error handling."
+          - "Integrated system delivered to production automating the citizen service workflow."
+
+      - role: "WordPress Developer - Meilisearch Plugin"
+        period: "Jul - Oct/2025"
+        description: "Development of custom plugin to implement advanced search overcoming native WordPress limitations."
+        highlights:
+          - "Utilization of PHP 8.2 with ReactPHP and PHP Fibers for asynchronous programming, automatic content synchronization with Meilisearch indexes, and query optimization."
+          - "Delivery of solution with significantly superior performance using modern PHP development techniques."
+
+      - role: "Remote Technical Support"
+        period: "Sep - Nov/2024"
+        description: "Ticket triage and N0/N1 remote support."
+        highlights: []
+
+  - title: "Software Developer"
+    company: "Freelance"
+    period: "2020 - Present"
+    periodStart: "2020-01"
+    periodEnd: null
+    type: "tech"
+    stack:
+      - "PHP"
+      - "Laravel"
+      - "MySQL"
+      - "SQL Server"
+      - "Docker"
+      - "Git"
+      - "Linux"
+      - "HTML"
+      - "CSS"
+      - "JavaScript/TypeScript"
+      - "Bootstrap"
+      - "Tailwind CSS"
+      - "C#"
+      - "Windows Forms"
+      - "MariaDB"
+      - "PostgreSQL"
+    description: "Continuous development of practical projects for technical improvement and portfolio building."
+    highlights:
+      - "Creation of complete web applications using PHP 8.x and Laravel framework, implementation of RESTful APIs, relational database architecture design (MySQL/SQL Server), containerization with Docker, and responsive interface development."
+      - "Application of agile methodologies, code best practices (SOLID, DRY, KISS), and version control with Git."
+
+previousExperience:
+  title: "Previous Experience in Retail and Customer Service"
+  period: "2016 - 2024"
+  skillsAcquired: "Teamwork, communication, problem-solving, customer service, time management, and adaptability."
+  positions:
+    - title: "CX and Business Specialist"
+      company: "SX Negócios"
+      period: "Jun - Sep/2024"
+
+    - title: "Sales Promoter"
+      company: "Dois Cunhados Hortifruti"
+      period: "Aug - Oct/2023"
+
+    - title: "Entry and Exit Controller"
+      company: "Valle RH"
+      period: "Aug/2022 - Jul/2023"
+
+    - title: "Stock Clerk"
+      company: "O Boticário"
+      period: "Sep - Dec/2021"
+
+    - title: "Optical Consultant"
+      company: "Óticas Santês"
+      period: "Nov/2020 - May/2021"
+
+    - title: "Perishables Stocker and Bagger"
+      company: "Comercial Esperança"
+      period: "Feb/2016 - Apr/2020"

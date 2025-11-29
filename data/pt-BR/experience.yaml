@@ -1,0 +1,92 @@
+jobs:
+  - title: "Estagiário de TI"
+    company: "Prefeitura Municipal de Sorocaba"
+    period: "Setembro 2024 - Outubro 2025"
+    periodStart: "2024-09"
+    periodEnd: "2025-10"
+    type: "tech"
+    stack:
+      - "Python"
+      - "Django"
+      - "PostgreSQL"
+      - "PHP"
+      - "SuiteCRM"
+      - "WordPress"
+      - "Docker"
+      - "Portainer CE"
+    projects:
+      - role: "Desenvolvedor Backend - Portal 156"
+        period: "Dez/2024 - Jun/2025"
+        description: "Responsável pela integração do sistema de atendimento ao cidadão com CRM governamental para automatização de processos."
+        highlights:
+          - "Desenvolvimento da camada de integração Django + SuiteCRM API v4 REST implementando autenticação, endpoints personalizados e tratamento robusto de erros."
+          - "Sistema integrado entregue em produção automatizando o fluxo de atendimento ao cidadão."
+
+      - role: "Desenvolvedor WordPress - Plugin Meilisearch"
+        period: "Jul - Out/2025"
+        description: "Desenvolvimento de plugin customizado para implementar busca avançada superando limitações nativas do WordPress."
+        highlights:
+          - "Utilização de PHP 8.2 com ReactPHP e PHP Fibers para programação assíncrona, sincronização automática de conteúdo com índices Meilisearch e otimização de queries."
+          - "Entrega de solução com performance significativamente superior utilizando técnicas modernas de desenvolvimento PHP."
+
+      - role: "Suporte Técnico Remoto"
+        period: "Set - Nov/2024"
+        description: "Triagem de chamados e atendimento remoto N0/N1."
+        highlights: []
+
+  - title: "Desenvolvedor de Software"
+    company: "Autônomo"
+    period: "2020 - Presente"
+    periodStart: "2020-01"
+    periodEnd: null
+    type: "tech"
+    stack:
+      - "PHP"
+      - "Laravel"
+      - "MySQL"
+      - "SQL Server"
+      - "Docker"
+      - "Git"
+      - "Linux"
+      - "HTML"
+      - "CSS"
+      - "JavaScript/TypeScript"
+      - "Bootstrap"
+      - "Tailwind CSS"
+      - "C#"
+      - "Windows Forms"
+      - "MariaDB"
+      - "PostgreSQL"
+    description: "Desenvolvimento contínuo de projetos práticos para aprimoramento técnico e construção de portfólio."
+    highlights:
+      - "Criação de aplicações web completas utilizando PHP 8.x e Laravel framework, implementação de APIs RESTful, projeto de arquiteturas de bancos relacionais (MySQL/SQL Server), containerização com Docker e desenvolvimento de interfaces responsivas."
+      - "Aplicação de metodologias ágeis, boas práticas de código (SOLID, DRY, KISS) e controle de versão com Git."
+
+previousExperience:
+  title: "Experiências Anteriores em Varejo e Atendimento"
+  period: "2016 - 2024"
+  skillsAcquired: "Trabalho em equipe, comunicação, resolução de problemas, atendimento ao cliente, gestão de tempo e adaptabilidade."
+  positions:
+    - title: "Especialista de CX e Negócios"
+      company: "SX Negócios"
+      period: "Jun - Set/2024"
+
+    - title: "Promotor de Vendas"
+      company: "Dois Cunhados Hortifruti"
+      period: "Ago - Out/2023"
+
+    - title: "Controlador de Entrada e Saída"
+      company: "Valle RH"
+      period: "Ago/2022 - Jul/2023"
+
+    - title: "Estoquista"
+      company: "O Boticário"
+      period: "Set - Dez/2021"
+
+    - title: "Consultor Óptico"
+      company: "Óticas Santês"
+      period: "Nov/2020 - Mai/2021"
+
+    - title: "Repositor de Perecíveis e Empacotador"
+      company: "Comercial Esperança"
+      period: "Fev/2016 - Abr/2020"

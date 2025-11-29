@@ -1,0 +1,29 @@
+# Bun Configuration
+# https://bun.sh/docs/runtime/bunfig
+
+# Development server configuration
+[serve]
+port = 3000
+
+# Static file serving with Tailwind plugin
+[serve.static]
+plugins = ["bun-plugin-tailwind"]
+
+# Bundler configuration
+[bundle]
+# Enable code splitting for better caching
+splitting = true
+# Minify in production
+minify = true
+# Source maps for debugging
+sourcemap = "external"
+
+# Custom file loaders
+[bundle.loader]
+".yaml" = "file"
+".yml" = "file"
+
+# Development-specific settings
+[run]
+# Enable hot reloading
+hot = true

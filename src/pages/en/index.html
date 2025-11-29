@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Vitor de Jesus Oliveira - Software Developer</title>
+    <meta name="description" content="Junior Software Developer with experience in PHP, Laravel, Django, Python, Docker, and REST APIs. Professional portfolio and resume.">
+    <meta name="author" content="João Vitor de Jesus Oliveira">
+    <meta name="keywords" content="developer, software, PHP, Laravel, Django, Python, Docker, REST API, full stack, web developer">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="João Vitor de Jesus Oliveira - Software Developer">
+    <meta property="og:description" content="Junior Software Developer with experience in PHP, Laravel, Django, Python, Docker, and REST APIs.">
+    <meta property="og:type" content="profile">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="pt_BR">
+
+    <!-- Alternate languages -->
+    <link rel="alternate" hreflang="pt-BR" href="/">
+    <link rel="alternate" hreflang="en" href="/en/">
+    <link rel="alternate" hreflang="x-default" href="/en/">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://joaovjo.com.br/en/">
+
+    <link rel="stylesheet" href="../../global.css" />
+
+    <!-- JSON-LD Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "mainEntity": {
+            "@type": "Person",
+            "name": "João Vitor de Jesus Oliveira",
+            "jobTitle": "Junior Software Developer",
+            "email": "contato@joaovjo.com.br",
+            "telephone": "+55 15 981452911",
+            "url": "https://joaovjo.com.br",
+            "sameAs": [
+                "https://www.linkedin.com/in/joaovitordejesusoliveira",
+                "https://github.com/joaovjo"
+            ],
+            "knowsAbout": [
+                "PHP", "Laravel", "Django", "Python", "Docker", "REST API",
+                "MySQL", "PostgreSQL", "Git", "Linux", "React", "JavaScript",
+                "TypeScript", "Tailwind CSS", "Microservices"
+            ],
+            "hasCredential": [
+                {
+                    "@type": "EducationalOccupationalCredential",
+                    "name": "Systems Analysis and Development",
+                    "credentialCategory": "degree"
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Force English language -->
+    <script>
+        // Set English as the language before Alpine loads
+        localStorage.setItem('lang', 'en');
+    </script>
+</head>
+
+<body x-data x-cloak
+    :class="{ 'dark': $store.darkMode }"
+    class="min-h-screen bg-background text-foreground transition-colors duration-300 print:bg-white print:text-black">
+
+    <div class="max-w-4xl mx-auto px-6 py-12 print:px-0 print:py-0">
+
+        <!-- Header -->
+        <header class="flex items-center justify-between mb-12 print:mb-6" itemscope itemtype="https://schema.org/Person">
+            <div class="flex items-center gap-4" x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 100)"
+                x-show="loaded" x-transition:enter="transition ease-out duration-500"
+                x-transition:enter-start="opacity-0 -translate-x-4" x-transition:enter-end="opacity-100 translate-x-0">
+                <div
+                    class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-semibold text-lg shadow-sm print:bg-gray-800 print:text-white">
+                    JV
+                </div>
+                <div>
+                    <h1 class="text-xl font-semibold tracking-tight" itemprop="name" x-text="$t().profile.name">João Vitor de Jesus Oliveira</h1>
+                    <p class="text-sm text-muted-foreground" itemprop="jobTitle" x-text="$t().profile.title">Junior Software Developer</p>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-2 print:hidden">
+                <!-- Download PDF -->
+                <button @click="window.print()"
+                    class="inline-flex items-center justify-center rounded-md h-9 px-3 border border-border bg-background hover:bg-accent hover:text-accent-foreground transition-colors text-sm font-medium gap-2"
+                    :title="$t().ui.actions.downloadPdf">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <span class="hidden sm:inline" x-text="$t().ui.actions.downloadPdf">PDF</span>
+                </button>
+
+                <!-- Language Selector -->
+                <button @click="$store.setLang($store.lang === 'pt-BR' ? 'en' : 'pt-BR')"
+                    class="inline-flex items-center justify-center rounded-md h-9 px-3 border border-border bg-background hover:bg-accent hover:text-accent-foreground transition-colors text-sm font-medium"
+                    :title="$t().ui.actions.switchLang">
+                    <span x-text="$store.lang === 'pt-BR' ? '🇺🇸 EN' : '🇧🇷 PT'"></span>
+                </button>
+
+                <!-- Theme Toggle -->
+                <button @click="$store.toggleDarkMode()"
+                    class="inline-flex items-center justify-center rounded-md h-9 w-9 border border-border bg-background hover:bg-accent hover:text-accent-foreground transition-colors"
+                    :title="$store.darkMode ? $t().ui.actions.lightMode : $t().ui.actions.darkMode">
+                    <svg x-show="!$store.darkMode" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                    <svg x-show="$store.darkMode" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Print header with contact info -->
+            <address class="hidden print:flex print:flex-col print:text-right print:text-xs print:not-italic" itemprop="address">
+                <a href="mailto:contato@joaovjo.com.br" itemprop="email">contato@joaovjo.com.br</a>
+                <a href="https://wa.me/5515981452911" itemprop="telephone">+55 15 98145-2911</a>
+                <a href="https://linkedin.com/in/joaovitordejesusoliveira" itemprop="sameAs">linkedin.com/in/joaovitordejesusoliveira</a>
+                <a href="https://github.com/joaovjo" itemprop="sameAs">github.com/joaovjo</a>
+            </address>
+        </header>
+
+        <!-- Contact Links (visible on screen) -->
+        <nav class="flex flex-wrap gap-3 mb-10 print:hidden" aria-label="Contact links">
+            <a :href="'mailto:' + $t().profile.contact.email"
+                class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span x-text="$t().profile.contact.email"></span>
+            </a>
+            <a :href="$t().profile.contact.linkedin" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                <span>LinkedIn</span>
+            </a>
+            <a :href="$t().profile.contact.github" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                <span>GitHub</span>
+            </a>
+            <a :href="'https://wa.me/' + $t().profile.contact.phone.replace(/[\s+]/g, '')" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                <span x-text="$t().profile.contact.phone"></span>
+            </a>
+        </nav>
+
+        <main>
+            <!-- Professional Summary -->
+            <section class="mb-10 print:mb-6" aria-labelledby="summary-title" x-data="{ show: false }" x-init="setTimeout(() => show = true, 150)"
+                x-show="show" x-transition:enter="transition ease-out duration-500"
+                x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
+                <h2 id="summary-title" class="text-lg font-semibold tracking-tight mb-3 print:text-base" x-text="$t().ui.sections.summary">
+                    Professional Summary
+                </h2>
+                <p class="text-sm text-muted-foreground leading-relaxed print:text-xs" itemprop="description" x-text="$t().profile.summary">
+                </p>
+            </section>
+
+            <!-- Technical Skills -->
+            <section class="mb-10 print:mb-6" aria-labelledby="skills-title" x-data="{ show: false }" x-init="setTimeout(() => show = true, 250)"
+                x-show="show" x-transition:enter="transition ease-out duration-500"
+                x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
+                <h2 id="skills-title" class="text-lg font-semibold tracking-tight mb-4 print:text-base" x-text="$t().ui.sections.skills">
+                    Technical Skills
+                </h2>
+
+                <!-- Hard Skills -->
+                <div class="mb-6 print:mb-4">
+                    <h3 class="text-sm font-medium text-muted-foreground mb-3 print:text-xs print:mb-2" x-text="$t().skills.hardSkills.title">Hard Skills</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 print:grid-cols-3 print:gap-2">
+                        <template x-for="category in $t().skills.hardSkills.categories" :key="category.name">
+                            <div class="rounded-lg border border-border bg-card p-4 print:p-2 print:border-gray-300">
+                                <h4 class="font-medium text-sm mb-2 text-card-foreground print:text-xs" x-text="category.name"></h4>
+                                <div class="flex flex-wrap gap-1">
+                                    <template x-for="skill in category.items" :key="skill.name">
+                                        <span class="group inline-flex items-center gap-1 rounded-md bg-secondary px-2 py-0.5 text-xs font-medium text-secondary-foreground print:bg-gray-100 print:text-gray-800"
+                                            itemprop="knowsAbout">
+                                            <span x-text="skill.name"></span>
+                                            <span class="text-muted-foreground text-[10px] opacity-70" x-text="'(' + skill.experience + ')'"></span>
+                                        </span>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div>
+                    <h3 class="text-sm font-medium text-muted-foreground mb-3 print:text-xs print:mb-2" x-text="$t().skills.softSkills.title">Soft Skills</h3>
+                    <div class="flex flex-wrap gap-2 print:gap-1">
+                        <template x-for="skill in $t().skills.softSkills.items" :key="skill">
+                            <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary print:bg-gray-200 print:text-gray-800 print:text-xs print:px-2 print:py-0.5"
+                                x-text="skill"></span>
+                        </template>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Professional Experience -->
+            <section class="mb-10 print:mb-6 print:break-before-page" aria-labelledby="experience-title">
+                <h2 id="experience-title" class="text-lg font-semibold tracking-tight mb-6 print:text-base print:mb-3" x-text="$t().ui.sections.experience">
+                    Professional Experience
+                </h2>
+
+                <div class="relative" x-data="{ visibleItems: [] }" x-init="$t().experience.jobs.forEach((_, i) => setTimeout(() => visibleItems.push(i), 300 + i * 200))">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-[11px] top-2 bottom-2 w-px bg-border print:bg-gray-300"></div>
+
+                    <!-- Tech Jobs -->
+                    <div class="space-y-6 print:space-y-3">
+                        <template x-for="(job, index) in $t().experience.jobs" :key="index">
+                            <article class="relative pl-8 print:pl-6" x-show="visibleItems.includes(index)"
+                                x-transition:enter="transition ease-out duration-500"
+                                x-transition:enter-start="opacity-0 translate-x-4"
+                                x-transition:enter-end="opacity-100 translate-x-0"
+                                itemscope itemtype="https://schema.org/OrganizationRole">
+
+                                <!-- Timeline Dot -->
+                                <div class="absolute left-0 top-2 w-[23px] h-[23px] rounded-full border-2 border-border bg-background flex items-center justify-center print:border-gray-400 print:bg-white">
+                                    <div class="w-2 h-2 rounded-full bg-primary print:bg-gray-800"></div>
+                                </div>
+
+                                <!-- Job Card -->
+                                <div class="rounded-lg border border-border bg-card p-5 shadow-sm print:p-3 print:shadow-none print:border-gray-300"
+                                    x-data="{ hover: false, expanded: true }" @mouseenter="hover = true" @mouseleave="hover = false"
+                                    :class="{ 'shadow-md border-ring/50': hover }">
+
+                                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3 print:mb-2">
+                                        <div>
+                                            <h3 class="font-semibold text-card-foreground print:text-sm" itemprop="roleName" x-text="job.title"></h3>
+                                            <p class="text-sm text-muted-foreground print:text-xs" itemprop="memberOf" x-text="job.company"></p>
+                                        </div>
+                                        <time class="inline-flex items-center rounded-md border border-border px-2.5 py-0.5 text-xs font-medium text-muted-foreground whitespace-nowrap print:border-gray-300"
+                                            :datetime="job.periodStart" x-text="job.period" itemprop="startDate"></time>
+                                    </div>
+
+                                    <!-- Stack -->
+                                    <div class="flex flex-wrap gap-1 mb-3 print:mb-2" x-show="job.stack">
+                                        <template x-for="tech in job.stack" :key="tech">
+                                            <span class="inline-flex items-center rounded-md bg-secondary px-2 py-0.5 text-xs font-medium text-secondary-foreground print:bg-gray-100"
+                                                x-text="tech"></span>
+                                        </template>
+                                    </div>
+
+                                    <!-- Description -->
+                                    <p class="text-sm text-muted-foreground mb-3 print:text-xs print:mb-2" x-show="job.description" x-text="job.description"></p>
+
+                                    <!-- Projects -->
+                                    <div x-show="job.projects && job.projects.length > 0" class="space-y-3 print:space-y-2">
+                                        <button @click="expanded = !expanded" class="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1 print:hidden">
+                                            <span x-text="$t().ui.labels.projects"></span>
+                                            <svg :class="{ 'rotate-180': expanded }" class="h-3 w-3 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </button>
+
+                                        <div x-show="expanded" x-collapse class="space-y-3 print:space-y-2">
+                                            <template x-for="project in job.projects" :key="project.role">
+                                                <div class="pl-3 border-l-2 border-border print:border-gray-300">
+                                                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                                                        <h4 class="font-medium text-sm text-card-foreground print:text-xs" x-text="project.role"></h4>
+                                                        <span class="text-xs text-muted-foreground" x-text="project.period"></span>
+                                                    </div>
+                                                    <p class="text-xs text-muted-foreground mb-2 print:mb-1" x-text="project.description"></p>
+                                                    <ul class="list-disc list-inside space-y-1" x-show="project.highlights && project.highlights.length > 0">
+                                                        <template x-for="highlight in project.highlights" :key="highlight">
+                                                            <li class="text-xs text-muted-foreground print:text-[10px]" x-text="highlight"></li>
+                                                        </template>
+                                                    </ul>
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </div>
+
+                                    <!-- Highlights (for jobs without projects) -->
+                                    <ul class="list-disc list-inside space-y-1" x-show="job.highlights && job.highlights.length > 0 && !job.projects">
+                                        <template x-for="highlight in job.highlights" :key="highlight">
+                                            <li class="text-xs text-muted-foreground print:text-[10px]" x-text="highlight"></li>
+                                        </template>
+                                    </ul>
+                                </div>
+                            </article>
+                        </template>
+                    </div>
+
+                    <!-- Previous Experience (Retail) - Accordion -->
+                    <div class="relative pl-8 mt-6 print:pl-6 print:mt-3" x-data="{ open: false }">
+                        <!-- Timeline Dot -->
+                        <div class="absolute left-0 top-2 w-[23px] h-[23px] rounded-full border-2 border-border bg-background flex items-center justify-center print:border-gray-400 print:bg-white">
+                            <div class="w-2 h-2 rounded-full bg-muted-foreground print:bg-gray-500"></div>
+                        </div>
+
+                        <div class="rounded-lg border border-border bg-card/50 p-4 print:p-2 print:border-gray-300">
+                            <button @click="open = !open" class="w-full flex items-center justify-between text-left print:pointer-events-none">
+                                <div>
+                                    <h3 class="font-medium text-sm text-card-foreground print:text-xs" x-text="$t().experience.previousExperience.title"></h3>
+                                    <p class="text-xs text-muted-foreground" x-text="$t().experience.previousExperience.period"></p>
+                                </div>
+                                <svg :class="{ 'rotate-180': open }" class="h-4 w-4 text-muted-foreground transition-transform print:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+
+                            <div x-show="open" x-collapse class="mt-3 print:block print:mt-2">
+                                <p class="text-xs text-muted-foreground mb-3 print:mb-2">
+                                    <strong x-text="$t().ui.labels.skillsAcquired + ':'"></strong>
+                                    <span x-text="$t().experience.previousExperience.skillsAcquired"></span>
+                                </p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 print:grid-cols-2 print:gap-1">
+                                    <template x-for="position in $t().experience.previousExperience.positions" :key="position.title + position.company">
+                                        <div class="text-xs text-muted-foreground print:text-[10px]">
+                                            <span class="font-medium" x-text="position.title"></span>
+                                            <span x-text="' - ' + position.company"></span>
+                                            <span class="text-muted-foreground/70" x-text="' (' + position.period + ')'"></span>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="mb-10 print:mb-6" aria-labelledby="education-title" x-data="{ show: false }" x-init="setTimeout(() => show = true, 600)"
+                x-show="show" x-transition:enter="transition ease-out duration-500"
+                x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
+                <h2 id="education-title" class="text-lg font-semibold tracking-tight mb-4 print:text-base print:mb-2" x-text="$t().ui.sections.education">
+                    Education
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 print:gap-2">
+                    <template x-for="degree in $t().education.degrees" :key="degree.course">
+                        <div class="rounded-lg border border-border bg-card p-4 print:p-2 print:border-gray-300"
+                            itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
+                            <h3 class="font-medium text-sm text-card-foreground print:text-xs" itemprop="name" x-text="degree.course"></h3>
+                            <p class="text-xs text-muted-foreground" itemprop="recognizedBy" x-text="degree.institution"></p>
+                            <time class="text-xs text-muted-foreground" x-text="degree.period"></time>
+                        </div>
+                    </template>
+                </div>
+            </section>
+
+            <!-- Certifications -->
+            <section class="mb-10 print:mb-6" aria-labelledby="certifications-title" x-data="{ show: false }" x-init="setTimeout(() => show = true, 700)"
+                x-show="show" x-transition:enter="transition ease-out duration-500"
+                x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
+                <h2 id="certifications-title" class="text-lg font-semibold tracking-tight mb-3 print:text-base print:mb-2" x-text="$t().ui.sections.certifications">
+                    Certifications
+                </h2>
+                <div class="flex flex-wrap gap-2 print:gap-1">
+                    <template x-for="cert in $t().education.certifications" :key="cert">
+                        <span class="inline-flex items-center rounded-md border border-border px-2.5 py-1 text-xs font-medium text-muted-foreground print:border-gray-300 print:px-1.5 print:py-0.5"
+                            x-text="cert"></span>
+                    </template>
+                </div>
+            </section>
+
+            <!-- Languages -->
+            <section class="mb-10 print:mb-6" aria-labelledby="languages-title" x-data="{ show: false }" x-init="setTimeout(() => show = true, 800)"
+                x-show="show" x-transition:enter="transition ease-out duration-500"
+                x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
+                <h2 id="languages-title" class="text-lg font-semibold tracking-tight mb-3 print:text-base print:mb-2" x-text="$t().ui.sections.languages">
+                    Languages
+                </h2>
+                <div class="flex flex-wrap gap-4 print:gap-2">
+                    <template x-for="lang in $t().education.languages" :key="lang.code">
+                        <div class="text-sm text-muted-foreground print:text-xs">
+                            <span class="font-medium text-foreground" x-text="lang.name"></span>
+                            <span x-text="' - ' + lang.level"></span>
+                        </div>
+                    </template>
+                </div>
+            </section>
+        </main>
+
+        <footer class="pt-8 border-t border-border text-center text-sm text-muted-foreground print:pt-4 print:text-xs print:border-gray-300">
+            <span x-text="$t().ui.labels.allRightsReserved"></span> &copy; <span x-text="new Date().getFullYear()"></span>
+        </footer>
+    </div>
+
+    <script type="module" src="../../index.ts"></script>
+</body>
+
+</html>
