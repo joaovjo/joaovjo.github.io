@@ -7,8 +7,7 @@
 	"scripts": {
 		"dev": "bun --hot src/server.ts",
 		"start": "NODE_ENV=production bun src/server.ts",
-		"build": "bun run build:server && bun run build:static",
-		"build:server": "bun build src/server.ts --outdir=dist --target=bun --minify",
+		"build": "bun run build:static",
 		"build:static": "bun build src/pages/index.html src/pages/en/index.html --outdir=dist --minify",
 		"lint": "bunx @biomejs/biome check .",
 		"lint:fix": "bunx @biomejs/biome check --write .",
