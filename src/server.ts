@@ -15,7 +15,7 @@ import enIndexHtml from "./pages/en/index.html";
 import indexHtml from "./pages/index.html";
 
 const isDev = process.env.NODE_ENV !== "production";
-const port = Number(process.env.PORT) || 3000;
+const port = parseInt(process.env.PORT || '3000', 10) || 3000;
 
 console.log(
 	`🚀 Starting server in ${isDev ? "development" : "production"} mode...`,
