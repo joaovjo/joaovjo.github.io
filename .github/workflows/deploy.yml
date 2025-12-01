@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+      - name: Compile Tailwind CSS
+        run: bunx @tailwindcss/cli -i src/global.css -o src/compiled.css --minify
+
       - name: Build static site
         run: |
           # Build HTML pages with Bun bundler (bundles JS, CSS, and assets)
