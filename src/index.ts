@@ -1,4 +1,5 @@
 import Alpine from "alpinejs";
+import collapse from "@alpinejs/collapse";
 // Import YAML data - English
 import educationEn from "@/data/en/education.yaml";
 import experienceEn from "@/data/en/experience.yaml";
@@ -189,4 +190,5 @@ declare global {
 }
 
 window.Alpine = Alpine;
+Alpine.plugin(collapse);
 Alpine.start();
