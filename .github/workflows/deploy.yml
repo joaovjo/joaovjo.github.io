@@ -33,7 +33,7 @@ jobs:
       - name: Build static site
         run: |
           # Build HTML pages with Bun bundler (bundles JS, CSS, and assets)
-          bun build src/pages/index.html src/pages/en/index.html --outdir=dist --minify
+          bun build src/pages/index.html --outdir=dist --minify
 
           # Copy data files
           cp -r data dist/
@@ -42,10 +42,6 @@ jobs:
           cp CNAME dist/
 
           # Rename en folder structure
-          mkdir -p dist/en
-          if [ -f dist/pages/en/index.html ]; then
-            mv dist/pages/en/index.html dist/en/
-          fi
           if [ -f dist/pages/index.html ]; then
             mv dist/pages/index.html dist/
           fi
