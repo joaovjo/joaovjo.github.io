@@ -11,6 +11,8 @@ plugins = ["bun-plugin-tailwind"]
 
 # Bundler configuration
 [bundle]
+# Enable Tailwind CSS processing
+plugins = ["bun-plugin-tailwind"]
 # Enable code splitting for better caching
 splitting = true
 # Minify in production
